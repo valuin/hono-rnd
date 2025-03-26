@@ -1,0 +1,30 @@
+{
+  "name": "hono-rnd",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "db:start": "docker compose up -d",
+    "db:stop": "docker compose down",
+    "db:purge": "docker compose down -v",
+    "db:push": "bunx drizzle-kit push",
+    "db:gen": "bunx drizzle-kit generate",
+    "db:migrate": "bunx drizzle-kit migrate",
+    "db:m": "bun db:gen && bun db:migrate",
+    "db:prod-m": "bunx drizzle-kit generate && bunx drizzle-kit migrate"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.0",
+    "better-auth": "^1.2.4",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.41.0",
+    "hono": "^4.7.5",
+    "pg": "^8.14.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250214.0",
+    "@types/pg": "^8.11.11",
+    "drizzle-kit": "^0.30.5",
+    "tsx": "^4.19.3",
+    "wrangler": "^4.4.0"
+  }
+}
