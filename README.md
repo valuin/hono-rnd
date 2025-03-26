@@ -1,8 +1,9 @@
 ```
-npm install
-npm run dev
+bun i
+bun db:start
+bun db:m
 ```
 
 ```
-npm run deploy
+bun dev
 ```
